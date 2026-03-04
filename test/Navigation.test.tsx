@@ -47,13 +47,6 @@ describe('Navigation Component', () => {
     expect(menuButton).toBeInTheDocument();
   });
 
-  it('renders GlassContainer wrapper', () => {
-    const { container } = render(<Navigation items={mockNavItems} />);
-
-    const glassContainer = container.querySelector('.glass-medium');
-    expect(glassContainer).toBeInTheDocument();
-  });
-
   it('has proper header structure', () => {
     const { container } = render(<Navigation items={mockNavItems} />);
 

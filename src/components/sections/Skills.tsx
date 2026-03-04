@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef } from 'react';
+import { JSX, useMemo, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaReact, FaPaintBrush, FaStar, FaTools } from 'react-icons/fa';
 import type { Skill } from '@/lib/types';

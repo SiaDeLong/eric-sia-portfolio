@@ -66,13 +66,7 @@ export default function Contact({ content }: ContactProps) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-6 font-bold text-5xl md:text-6xl lg:text-8xl leading-tight"
-            style={{
-              background: 'linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #ffffff 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
+            className="bg-clip-text bg-linear-to-r from-white via-purple-400 to-white mb-6 font-bold text-transparent text-5xl md:text-6xl lg:text-8xl leading-tight"
           >
             {heading}
           </motion.h2>

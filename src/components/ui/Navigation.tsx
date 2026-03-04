@@ -106,14 +106,7 @@ export default function Navigation({ items }: NavigationProps) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="shadow-2xl rounded-full"
-          style={{
-            background: 'rgba(26, 26, 26, 0.8)',
-            border: '1px solid rgba(168, 85, 247, 0.3)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(168, 85, 247, 0.1)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-          }}
+          className="bg-dark-surface/80 shadow-2xl shadow-black/40 backdrop-blur-xl border border-purple-500/30 rounded-full"
         >
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1 px-4 py-3">
@@ -201,14 +194,7 @@ export default function Navigation({ items }: NavigationProps) {
               className="md:hidden top-20 right-4 left-4 absolute"
             >
               <div 
-                className="shadow-2xl p-2 rounded-2xl"
-                style={{
-                  background: 'rgba(26, 26, 26, 0.95)',
-                  border: '1px solid rgba(168, 85, 247, 0.3)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  boxShadow: '0 8px 32px rgba(168, 85, 247, 0.2)',
-                }}
+                className="bg-dark-surface/95 shadow-2xl shadow-purple-500/20 backdrop-blur-xl p-2 border border-purple-500/30 rounded-2xl"
               >
                 {items.map((item, index) => (
                   <motion.button

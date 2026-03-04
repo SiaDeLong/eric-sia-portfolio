@@ -58,13 +58,7 @@ export default function Hero({ content }: HeroProps) {
         <StaggerContainer staggerDelay={0.15}>
           <motion.h1 
             variants={itemVariants}
-            className="mb-8 font-bold text-6xl md:text-8xl lg:text-9xl text-center leading-tight tracking-tight"
-            style={{
-              background: 'linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #ffffff 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
+            className="bg-clip-text bg-linear-to-r from-white via-purple-400 to-white mb-8 font-bold text-transparent text-6xl md:text-8xl lg:text-9xl text-center leading-tight tracking-tight"
           >
             {name}
           </motion.h1>

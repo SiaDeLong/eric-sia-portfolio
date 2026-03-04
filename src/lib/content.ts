@@ -2,7 +2,7 @@ import type { PortfolioContent } from './types';
 
 export const portfolioContent: PortfolioContent = {
   hero: {
-    name: "Your Name",
+    name: "Eric Sia",
     title: "Senior Full-Stack Engineer",
     tagline: "Crafting beautiful, performant web experiences with modern technologies",
     ctaText: "Get in touch",
