@@ -19,7 +19,7 @@ export default function About({ content }: AboutProps) {
   return (
     <section id="about" className="relative px-6 py-32 overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-purple-500/5 via-transparent to-transparent pointer-events-none" />
       
       <div className="relative mx-auto max-w-6xl">
         {/* Section heading */}
@@ -47,9 +47,9 @@ export default function About({ content }: AboutProps) {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-lg transition duration-500 blur" />
+              <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-lg transition duration-500 blur" />
               <div className="relative bg-dark-surface p-8 border border-dark-border hover:border-purple-500/50 rounded-lg text-center transition-all duration-300">
-                <div className="bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-3 font-bold text-transparent text-5xl md:text-6xl">
+                <div className="bg-clip-text bg-linear-to-r from-purple-400 to-blue-400 mb-3 font-bold text-transparent text-5xl md:text-6xl">
                   {item.number}
                 </div>
                 <div className="font-medium text-dark-text-secondary text-sm md:text-base uppercase tracking-wider">
@@ -68,7 +68,7 @@ export default function About({ content }: AboutProps) {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="group relative mx-auto max-w-4xl"
         >
-          <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 opacity-20 group-hover:opacity-30 blur-xl rounded-2xl transition duration-500" />
+          <div className="absolute -inset-1 bg-linear-to-r from-purple-600 via-blue-600 to-purple-600 opacity-20 group-hover:opacity-30 blur-xl rounded-2xl transition duration-500" />
           <div className="relative bg-dark-surface/50 backdrop-blur-sm p-8 md:p-12 border border-purple-500/30 rounded-2xl">
             <p className="font-light text-white text-xl md:text-2xl lg:text-3xl text-center leading-relaxed">
               {summary}

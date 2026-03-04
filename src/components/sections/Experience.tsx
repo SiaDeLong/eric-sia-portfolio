@@ -62,7 +62,7 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
       >
         <div className="group relative">
           {/* Card background with gradient border effect */}
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-lg transition duration-500 blur" />
+          <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-lg transition duration-500 blur" />
           
           <div className="relative bg-dark-surface backdrop-blur-sm p-6 md:p-8 border border-dark-border hover:border-purple-500/50 rounded-lg transition-all duration-300">
             {/* Date badge */}
@@ -114,7 +114,7 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
                   transition={{ delay: 0.7 + idx * 0.1 }}
                   className="flex items-start gap-3 text-dark-text-secondary"
                 >
-                  <span className="flex-shrink-0 mt-1 text-purple-500">▹</span>
+                  <span className="mt-1 text-purple-500 shrink-0">▹</span>
                   <span>{achievement}</span>
                 </motion.li>
               ))}
@@ -150,7 +150,7 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
   return (
     <section ref={sectionRef} id="experience" className="relative px-6 py-20 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-purple-500/5 to-transparent pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section heading */}
@@ -175,7 +175,7 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
           <div className="hidden md:block top-0 bottom-0 left-1/2 absolute bg-dark-border w-0.5 -translate-x-1/2 transform">
             <motion.div
               style={{ height: lineHeight }}
-              className="bg-gradient-to-b from-purple-500 to-blue-500 w-full origin-top"
+              className="bg-linear-to-b from-purple-500 to-blue-500 w-full origin-top"
             />
           </div>
 

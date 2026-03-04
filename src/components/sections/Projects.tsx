@@ -11,7 +11,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative px-6 py-32 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section heading */}
@@ -43,12 +43,12 @@ export default function Projects() {
               className="group relative"
             >
               {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 blur-xl rounded-2xl transition duration-500" />
+              <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 via-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 blur-xl rounded-2xl transition duration-500" />
               
               {/* Card */}
               <div className="relative flex flex-col bg-dark-surface shadow-2xl border border-purple-500/20 group-hover:border-purple-500/50 rounded-2xl h-full overflow-hidden transition-all duration-300">
                 {/* Image container */}
-                <div className="relative bg-gradient-to-br from-purple-900/20 to-blue-900/20 w-full h-56 overflow-hidden">
+                <div className="relative bg-linear-to-br from-purple-900/20 to-blue-900/20 w-full h-56 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
@@ -56,7 +56,7 @@ export default function Projects() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-surface via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-dark-surface via-transparent to-transparent opacity-60" />
                 </div>
 
                 {/* Content */}
@@ -93,7 +93,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 px-4 py-2 rounded-lg font-semibold text-white text-sm transition-all duration-300"
+                          className="flex items-center gap-2 bg-linear-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 px-4 py-2 rounded-lg font-semibold text-white text-sm transition-all duration-300"
                         >
                           <FaExternalLinkAlt className="w-4 h-4" />
                           Live Demo

@@ -95,7 +95,7 @@ export default function Contact({ content }: ContactProps) {
             
             <div className="relative bg-dark-surface/80 backdrop-blur-sm p-8 md:p-12 border border-purple-500/30 rounded-3xl">
               <p className="mb-8 font-light text-white text-2xl md:text-3xl">
-                Ready to bring your ideas to life? Let's create something amazing together.
+                Ready to bring your ideas to life? Let&apos;s create something amazing together.
               </p>
               
               {/* Email CTA Button */}
