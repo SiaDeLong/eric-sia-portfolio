@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
+@theme {
+  /* Minimal dark theme colors */
+  --color-dark-bg: #0a0a0a;
+  --color-dark-surface: #1a1a1a;
+  --color-dark-border: #333333;
+  --color-dark-text-primary: #ffffff;
+  --color-dark-text-secondary: #999999;
+  --color-dark-text-muted: #666666;
+  --color-dark-accent-primary: #ffffff;
+  --color-dark-accent-secondary: #666666;
+  --color-dark-accent-tertiary: #333333;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* CSS variables for use in components */
+  --dark-bg: #0a0a0a;
+  --dark-surface: #1a1a1a;
+  --dark-border: #333333;
+  --dark-text-primary: #ffffff;
+  --dark-text-secondary: #999999;
+  --dark-text-muted: #666666;
+  --dark-accent-primary: #ffffff;
+  --dark-accent-secondary: #666666;
+  --dark-accent-tertiary: #333333;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Glass effect utility classes - Minimal version */
+.glass-container,
+.glass-light {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
+.glass-medium {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.glass-heavy {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(24px)) {
+  .glass-container,
+  .glass-light,
+  .glass-medium,
+  .glass-heavy {
+    background: rgba(26, 26, 26, 0.95);
+  }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--dark-bg);
+  color: var(--dark-text-primary);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  letter-spacing: 0px;
+}
+
+/* Ensure smooth scrolling respects reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Minimal button styles */
+.btn-premium {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--dark-text-primary);
+  color: var(--dark-text-primary);
+  font-weight: 500;
+  letter-spacing: 0px;
+  transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+  background: var(--dark-text-primary);
+  color: var(--dark-bg);
+}
+
+/* Accent text - minimal version */
+.text-gradient {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  color: var(--dark-text-primary);
 }
