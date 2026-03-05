@@ -15,56 +15,77 @@ export const portfolioContent: PortfolioContent = {
   },
   skills: {
     skills: [
-      { name: "React", category: "Frontend" },
+      { name: "React.js", category: "Frontend" },
       { name: "Next.js", category: "Frontend" },
-      { name: "TypeScript", category: "Frontend" },
+      { name: "Angular", category: "Frontend" },
       { name: "Vue.js", category: "Frontend" },
-      { name: "Tailwind CSS", category: "Styling" },
-      { name: "CSS3", category: "Styling" },
-      { name: "Sass", category: "Styling" },
-      { name: "Framer Motion", category: "Animation" },
-      { name: "GSAP", category: "Animation" },
-      { name: "Git", category: "Tools" },
-      { name: "Webpack", category: "Tools" },
-      { name: "Vite", category: "Tools" },
+      { name: "Progressive Web Apps", category: "Frontend" },
+      { name: "Java", category: "Backend" },
+      { name: "Spring Boot", category: "Backend" },
+      { name: "Microservices", category: "Backend" },
+      { name: "RESTful APIs", category: "Backend" },
+      { name: "JPA Entity", category: "Backend" },
+      { name: "ORM", category: "Backend" },
+      { name: "MyBatis", category: "Backend" },
+      { name: "MySQL", category: "Database" },
+      { name: "PostgreSQL", category: "Database" },
+      { name: "MSSQL", category: "Database" },
+      { name: "SQLite", category: "Database" },
+      { name: "Redis", category: "Database" },
+      { name: "AWS", category: "Cloud & DevOps" },
+      { name: "Docker", category: "Cloud & DevOps" },
+      { name: "Kubernetes", category: "Cloud & DevOps" },
+      { name: "CI/CD", category: "Cloud & DevOps" },
+      { name: "Jenkins", category: "Cloud & DevOps" },
+      { name: "GitHub Actions", category: "Cloud & DevOps" },
+      { name: "Git", category: "Cloud & DevOps" },
+      { name: "Python", category: "Programming" },
+      { name: "R", category: "Programming" },
+      { name: "Machine Learning", category: "Programming" },
+      { name: "React Native", category: "Mobile" },
+      { name: "Expo Go", category: "Mobile" },
+      { name: "Kotlin", category: "Mobile" },
+      { name: "Android Studio", category: "Mobile" },
     ]
   },
   experience: {
     experiences: [
       {
-        company: "Tech Company A",
-        role: "Senior Frontend Engineer",
-        duration: "2 years",
-        startDate: "2022-01",
-        endDate: "2024-01",
+        company: "OpenMove AI Bhd",
+        role: "Senior Executive – Full Stack Developer",
+        duration: "2 Years",
+        startDate: "2024-10",
+        endDate: "Present",
         achievements: [
-          "Led frontend architecture redesign improving performance by 40%",
-          "Mentored team of 5 junior developers",
-          "Implemented design system used across 10+ products"
+          "Built CommissionSuite enabling first international expansion to Thailand",
+          "Led migration from WebSphere Java EE to React + Spring Boot + PostgreSQL",
+          "Introduced Docker and AWS infrastructure for improved deployment scalability",
+          "Delivered COO-led PoC securing customer approval and new business opportunities"
         ]
       },
       {
-        company: "Startup B",
-        role: "Full-Stack Developer",
-        duration: "2 years",
-        startDate: "2020-01",
-        endDate: "2022-01",
-        achievements: [
-          "Built responsive web applications from scratch",
-          "Integrated RESTful APIs and GraphQL endpoints",
-          "Improved code quality through testing and code reviews"
-        ]
-      },
-      {
-        company: "Digital Agency C",
-        role: "Frontend Developer",
+        company: "Plaza Premium Group",
+        role: "Software Engineer",
         duration: "1.5 years",
-        startDate: "2018-06",
-        endDate: "2020-01",
+        startDate: "2023-04",
+        endDate: "2024-10",
         achievements: [
-          "Developed pixel-perfect responsive websites for 20+ clients",
-          "Optimized web performance achieving 95+ Lighthouse scores",
-          "Collaborated with designers to implement modern UI/UX patterns"
+          "Fixed critical production issue in Smart Traveller mobile app (React Native)",
+          "Migrated Smart Traveller Admin Portal from Angular 5 to latest Angular LTS",
+          "Built serverless AWS API integration portal for internal and client developers",
+          "Implemented Redis-based queue system on AWS EC2"
+        ]
+      },
+      {
+        company: "Matrixtudios",
+        role: "IT Intern",
+        duration: "6 months",
+        startDate: "2022-04",
+        endDate: "2022-09",
+        achievements: [
+          "Developed Next.js landing pages for marketing campaigns",
+          "Implemented Zapier + Odoo automation for social media workflows",
+          "Assisted team development and mentored new interns"
         ]
       }
     ]
@@ -77,7 +98,7 @@ export const portfolioContent: PortfolioContent = {
         technologies: ["Next.js", "React", "Tailwind CSS", "Stripe"],
         image: "/images/project1.jpg",
         imageAlt: "E-commerce platform screenshot",
-        liveUrl: "https://example.com",
+        liveUrl: "https://",
         sourceUrl: "https://github.com/username/ecommerce"
       },
       {
@@ -102,9 +123,9 @@ export const portfolioContent: PortfolioContent = {
     heading: "Let's work together",
     subheading: "I'm currently open to new opportunities and exciting projects",
     socialLinks: [
-      { platform: "LinkedIn", url: "https://linkedin.com/in/username", icon: "linkedin" },
-      { platform: "GitHub", url: "https://github.com/username", icon: "github" },
-      { platform: "Email", url: "mailto:email@example.com", icon: "email" }
+      { platform: "LinkedIn", url: "https://www.linkedin.com/in/eric-sia-b0385a284/", icon: "linkedin" },
+      { platform: "GitHub", url: "https://github.com/SiaDeLong", icon: "github" },
+      { platform: "Email", url: "mailto:ericsiadelong@outlook.com", icon: "email" }
     ]
   },
   navigation: {

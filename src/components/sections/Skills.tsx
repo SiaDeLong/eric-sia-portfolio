@@ -1,45 +1,16 @@
 'use client';
 
-import { JSX, useMemo, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaReact, FaPaintBrush, FaStar, FaTools } from 'react-icons/fa';
+import { JSX, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { FaReact, FaDatabase, FaCloud, FaCode, FaMobile } from 'react-icons/fa';
+import { SiSpringboot } from 'react-icons/si';
 import type { Skill } from '@/lib/types';
 
 interface SkillsProps {
   skills: Skill[];
 }
 
-function SkillCard({ skill, index }: { skill: Skill; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      whileHover={{ scale: 1.05, y: -5 }}
-      className="group relative"
-    >
-      {/* Glow effect on hover */}
-      <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-xl transition duration-500 blur" />
-      
-      <div className="relative bg-dark-surface/80 shadow-lg backdrop-blur-sm px-6 py-4 border border-purple-500/20 hover:border-purple-500/50 rounded-xl transition-all duration-300">
-        <span className="font-medium text-white group-hover:text-purple-300 text-base md:text-lg transition-colors duration-300">
-          {skill.name}
-        </span>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function Skills({ skills }: SkillsProps) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-
   // Group skills by category
   const groupedSkills = useMemo(() => {
     const groups: Record<string, Skill[]> = {};
@@ -54,23 +25,39 @@ export default function Skills({ skills }: SkillsProps) {
     return groups;
   }, [skills]);
 
-  const categoryOrder = ['Frontend', 'Styling', 'Animation', 'Tools'];
-  const sortedCategories = categoryOrder.filter(cat => groupedSkills[cat]);
-
-  const categoryIcons: Record<string, JSX.Element> = {
-    'Frontend': <FaReact className="text-purple-400 text-4xl" />,
-    'Styling': <FaPaintBrush className="text-blue-400 text-4xl" />,
-    'Animation': <FaStar className="text-yellow-400 text-4xl" />,
-    'Tools': <FaTools className="text-green-400 text-4xl" />
+  const categoryConfig: Record<string, { icon: JSX.Element; color: string }> = {
+    'Frontend': { 
+      icon: <FaReact className="text-2xl" />, 
+      color: 'from-cyan-500 to-blue-500'
+    },
+    'Backend': { 
+      icon: <SiSpringboot className="text-2xl" />, 
+      color: 'from-green-500 to-emerald-500'
+    },
+    'Database': { 
+      icon: <FaDatabase className="text-2xl" />, 
+      color: 'from-orange-500 to-red-500'
+    },
+    'Cloud & DevOps': { 
+      icon: <FaCloud className="text-2xl" />, 
+      color: 'from-purple-500 to-pink-500'
+    },
+    'Programming': { 
+      icon: <FaCode className="text-2xl" />, 
+      color: 'from-yellow-500 to-orange-500'
+    },
+    'Mobile': { 
+      icon: <FaMobile className="text-2xl" />, 
+      color: 'from-indigo-500 to-purple-500'
+    },
   };
 
+  const categories = Object.keys(groupedSkills);
+
   return (
-    <section ref={sectionRef} id="skills" className="relative px-6 py-32 overflow-hidden">
-      {/* Animated background */}
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 bg-linear-to-b from-purple-500/5 via-blue-500/5 to-transparent pointer-events-none"
-      />
+    <section id="skills" className="relative px-6 py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-linear-to-b from-purple-500/5 to-transparent pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section heading */}
@@ -79,43 +66,68 @@ export default function Skills({ skills }: SkillsProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-20 text-center"
+          className="mb-16 text-center"
         >
-          <h2 className="mb-6 font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-tight">
+          <h2 className="mb-4 font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight">
             Skills & Technologies
           </h2>
-          <p className="text-dark-text-secondary text-lg md:text-xl">
-            Expertise across modern web development
+          <p className="text-dark-text-secondary text-base md:text-lg">
+            Full-stack expertise across modern development
           </p>
         </motion.div>
 
-        {/* Skills grid by category */}
-        <div className="space-y-16">
-          {sortedCategories.map((category, catIndex) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, x: catIndex % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: catIndex * 0.1 }}
-            >
-              {/* Category header */}
-              <div className="flex items-center gap-4 mb-8">
-                {categoryIcons[category]}
-                <h3 className="font-bold text-white text-3xl md:text-4xl">
-                  {category}
-                </h3>
-                <div className="flex-1 bg-linear-to-r from-purple-500/50 to-transparent h-px" />
-              </div>
+        {/* Masonry Grid */}
+        <div className="gap-6 space-y-6 columns-1 md:columns-2 lg:columns-3">
+          {categories.map((category, catIndex) => {
+            const config = categoryConfig[category];
+            return (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+                className="mb-6 break-inside-avoid"
+              >
+                <div className="group relative">
+                  {/* Glow effect */}
+                  <div className={`absolute -inset-0.5 bg-linear-to-r ${config.color} rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500`} />
+                  
+                  <div className="relative bg-dark-surface/80 backdrop-blur-sm p-6 border border-purple-500/20 hover:border-purple-500/50 rounded-2xl transition-all duration-300">
+                    {/* Category header */}
+                    <div className="flex items-center gap-3 mb-4 pb-4 border-purple-500/20 border-b">
+                      <div className={`bg-linear-to-br ${config.color} p-2 rounded-lg`}>
+                        {config.icon}
+                      </div>
+                      <h3 className="flex-1 font-bold text-white text-xl">
+                        {category}
+                      </h3>
+                      <span className="font-medium text-dark-text-secondary text-sm">
+                        {groupedSkills[category].length}
+                      </span>
+                    </div>
 
-              {/* Skills grid */}
-              <div className="gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {groupedSkills[category].map((skill, index) => (
-                  <SkillCard key={skill.name} skill={skill} index={index} />
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                    {/* Skills list */}
+                    <div className="flex flex-wrap gap-2">
+                      {groupedSkills[category].map((skill, index) => (
+                        <motion.span
+                          key={skill.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: catIndex * 0.1 + index * 0.02 }}
+                          whileHover={{ scale: 1.05 }}
+                          className="bg-purple-500/10 hover:bg-purple-500/20 px-3 py-1.5 border border-purple-500/30 hover:border-purple-400/50 rounded-lg text-purple-300 text-sm transition-all duration-200 cursor-default"
+                        >
+                          {skill.name}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

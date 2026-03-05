@@ -11,9 +11,9 @@ export default function About({ content }: AboutProps) {
   const { summary } = content;
 
   const highlights = [
-    { number: "5+", label: "Years Experience" },
-    { number: "50+", label: "Projects Delivered" },
-    { number: "95%", label: "Client Satisfaction" },
+    { number: "4", label: "Years Coding" },
+    { number: "30+", label: "Projects Built" },
+    { number: "10+", label: "Technologies" },
   ];
 
   return (

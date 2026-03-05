@@ -16,7 +16,7 @@ export interface AboutContent {
 
 export interface Skill {
   name: string;
-  category: 'Frontend' | 'Styling' | 'Animation' | 'Tools';
+  category: 'Frontend' | 'Backend' | 'Database' | 'Cloud & DevOps' | 'Programming' | 'Mobile';
   icon?: string;
 }
 

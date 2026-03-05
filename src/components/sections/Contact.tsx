@@ -100,7 +100,7 @@ export default function Contact({ content }: ContactProps) {
               
               {/* Email CTA Button */}
               <motion.a
-                href="mailto:email@example.com"
+                href="mailto:ericsiadelong@outlook.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 bg-linear-to-r from-purple-600 to-blue-600 shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 px-10 py-5 rounded-full font-semibold text-white text-lg transition-all duration-300"

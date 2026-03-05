@@ -73,7 +73,7 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
               transition={{ delay: 0.3 }}
               className="inline-block bg-purple-500/10 mb-4 px-4 py-1.5 border border-purple-500/30 rounded-full font-medium text-purple-300 text-sm"
             >
-              {experience.duration}
+              {new Date(experience.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - {experience.endDate === 'Present' ? 'Present' : new Date(experience.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} • {experience.duration}
             </motion.div>
 
             {/* Company and role */}
@@ -97,18 +97,18 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
               {experience.company}
             </motion.p>
 
-            {/* Achievements */}
+            {/* Achievements - always left aligned */}
             <motion.ul
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              className="space-y-3"
+              className="space-y-3 text-left"
             >
               {experience.achievements.map((achievement, idx) => (
                 <motion.li
                   key={idx}
-                  initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
+                  initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.7 + idx * 0.1 }}
