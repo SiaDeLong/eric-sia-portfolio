@@ -8,13 +8,7 @@ interface AboutProps {
 }
 
 export default function About({ content }: AboutProps) {
-  const { summary } = content;
-
-  const highlights = [
-    { number: "4", label: "Years Coding" },
-    { number: "30+", label: "Projects Built" },
-    { number: "10+", label: "Technologies" },
-  ];
+  const { summary, highlights } = content;
 
   return (
     <section id="about" className="relative px-6 py-32 overflow-hidden">

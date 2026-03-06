@@ -9,9 +9,12 @@ export const portfolioContent: PortfolioContent = {
     ctaLink: "#contact"
   },
   about: {
-    summary: "I build exceptional digital experiences that combine elegant code with stunning design. Specializing in modern web technologies, I transform complex challenges into intuitive solutions that users love and businesses need.",
-    image: "/images/profile.svg",
-    imageAlt: "Professional headshot"
+    summary: "Deliver enterprise-grade systems using React, Spring Boot, and AWS. Specialized in system modernization, microservices architecture, and cloud-native deployments. Proven track record in leading technical initiatives, driving platform migrations, and enabling international product expansion. Strong background in scalable backend design, DevOps automation, and production system stability.",
+    highlights: [
+      { number: "4", label: "Years Coding" },
+      { number: "30+", label: "Projects Built" },
+      { number: "10+", label: "Technologies" },
+    ]
   },
   skills: {
     skills: [
@@ -93,29 +96,36 @@ export const portfolioContent: PortfolioContent = {
   projects: {
     projects: [
       {
-        title: "E-Commerce Platform",
-        description: "A modern e-commerce platform with real-time inventory management and seamless checkout experience",
-        technologies: ["Next.js", "React", "Tailwind CSS", "Stripe"],
+        title: "新プル Group - Product Landing Platform",
+        description: "Official landing website with custom domain showcasing developed applications with SEO-optimized responsive design.",
+        technologies: ["Next.js", "Custom Domain", "SEO", "Responsive Design"],
         image: "/images/project1.jpg",
-        imageAlt: "E-commerce platform screenshot",
-        liveUrl: "https://",
-        sourceUrl: "https://github.com/username/ecommerce"
+        imageAlt: "新プル Group landing platform screenshot",
+        liveUrl: "https://shinpuru-group.com",
       },
       {
-        title: "Portfolio Dashboard",
-        description: "Interactive dashboard for tracking investment portfolios with real-time data visualization",
-        technologies: ["React", "TypeScript", "D3.js", "Node.js"],
+        title: "新プル Booth - iOS POS System",
+        description: "Mobile POS system for event booth businesses with product management, order tracking, and premium subscription features.",
+        technologies: ["React Native", "Expo Go", "iOS", "In-App Purchase"],
         image: "/images/project2.jpg",
-        imageAlt: "Portfolio dashboard screenshot",
-        liveUrl: "https://example.com/dashboard"
+        imageAlt: "新プル Booth POS system screenshot",
+        liveUrl: "",
       },
       {
-        title: "Task Management App",
-        description: "Collaborative task management application with drag-and-drop interface and team features",
-        technologies: ["Vue.js", "Vuex", "Firebase", "Tailwind CSS"],
+        title: "Ameiro 雨いろ - Weather App",
+        description: "Real-time weather monitoring app with worldwide data integration and clean location-based forecast visualization.",
+        technologies: ["Next.js", "Weather API", "REST", "Secret Management"],
         image: "/images/project3.jpg",
-        imageAlt: "Task management app screenshot",
-        sourceUrl: "https://github.com/username/taskapp"
+        imageAlt: "Ameiro weather app screenshot",
+        liveUrl: "",
+      },
+      {
+        title: "Kiro Note 記録ノート - Todo App",
+        description: "Productivity web app for task management with status tracking and responsive design for all devices.",
+        technologies: ["Next.js", "State Management", "Local Storage", "Responsive UI"],
+        image: "/images/project4.jpg",
+        imageAlt: "Kiro Note todo app screenshot",
+        liveUrl: "",
       }
     ]
   },
@@ -136,11 +146,5 @@ export const portfolioContent: PortfolioContent = {
       { label: "Projects", href: "#projects" },
       { label: "Contact", href: "#contact" }
     ]
-  },
-  metadata: {
-    title: "Your Name - Senior Full-Stack Engineer",
-    description: "Portfolio showcasing frontend development and design work",
-    ogImage: "/images/og-image.jpg",
-    url: "https://yourportfolio.com"
   }
 };

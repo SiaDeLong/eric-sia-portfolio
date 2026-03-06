@@ -61,17 +61,19 @@ export default function Hero({ content }: HeroProps) {
             {/* Profile Image */}
             <motion.div 
               variants={itemVariants}
-              className="relative flex-shrink-0"
+              className="relative shrink-0"
             >
               {/* Image container */}
               <div className="relative bg-dark-surface shadow-2xl border-2 border-purple-500/30 hover:border-purple-500/50 rounded-full w-48 md:w-64 h-48 md:h-64 overflow-hidden transition-colors duration-300">
                 <Image
-                  src="/images/profile.svg"
+                  src="/Profile.jpeg"
                   alt="Profile"
                   fill
                   className="object-cover"
                   priority
                 />
+                {/* Bottom gradient overlay with subtle effect */}
+                <div className="bottom-0 absolute inset-x-0 bg-linear-to-t from-black/80 to-transparent h-1/3" />
               </div>
             </motion.div>
 

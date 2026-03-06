@@ -10,8 +10,7 @@ export interface HeroContent {
 
 export interface AboutContent {
   summary: string;
-  image: string;
-  imageAlt: string;
+  highlights: Array<{ number: string; label: string }>;
 }
 
 export interface Skill {
@@ -72,13 +71,6 @@ export interface NavigationContent {
   items: NavItem[];
 }
 
-export interface MetadataContent {
-  title: string;
-  description: string;
-  ogImage: string;
-  url: string;
-}
-
 export interface PortfolioContent {
   hero: HeroContent;
   about: AboutContent;
@@ -87,5 +79,4 @@ export interface PortfolioContent {
   projects: ProjectsContent;
   contact: ContactContent;
   navigation: NavigationContent;
-  metadata: MetadataContent;
 }
