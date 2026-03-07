@@ -99,7 +99,7 @@ export const portfolioContent: PortfolioContent = {
         title: "新プル Group - Product Landing Platform",
         description: "Official landing website with custom domain showcasing developed applications with SEO-optimized responsive design.",
         technologies: ["Next.js", "Custom Domain", "SEO", "Responsive Design"],
-        image: "/images/project1.jpg",
+        image: "/Simple-Group.png",
         imageAlt: "新プル Group landing platform screenshot",
         liveUrl: "https://shinpuru-group.com",
       },

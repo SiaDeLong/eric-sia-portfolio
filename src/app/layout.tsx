@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Eric Sia - Senior Full-Stack Engineer",
-  description: "Modern portfolio showcasing frontend development and design work for Sia De Long or Eric Sia",
+  description: "Eric Sia De Long, Modern portfolio showcasing frontend development and design work",
 };
 
 export default function RootLayout({

@@ -5,6 +5,12 @@ import Image from 'next/image';
 import StaggerContainer from '../animations/StaggerContainer';
 import type { HeroContent } from '@/lib/types';
 
+import dynamic from "next/dynamic";
+
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+});
+
 interface HeroProps {
   content: HeroContent;
 }
@@ -37,22 +43,6 @@ export default function Hero({ content }: HeroProps) {
       id="hero" 
       className="relative flex justify-center items-center px-4 pt-32 pb-20 min-h-screen overflow-hidden"
     >
-      {/* Animated background gradient */}
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        animate={{
-          background: [
-            'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%)',
-            'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%)',
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-      />
 
       {/* Content */}
       <div className="z-10 relative mx-auto max-w-6xl">
