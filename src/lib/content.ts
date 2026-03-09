@@ -6,7 +6,8 @@ export const portfolioContent: PortfolioContent = {
     title: "Senior Full-Stack Engineer",
     tagline: "Building scalable end-to-end systems and beautiful web experiences with modern technologies",
     ctaText: "Get in touch",
-    ctaLink: "#contact"
+    ctaLink: "#contact",
+    location: "KL, Malaysia"
   },
   about: {
     summary: "Deliver enterprise-grade systems using React, Spring Boot, and AWS. Specialized in system modernization, microservices architecture, and cloud-native deployments. Proven track record in leading technical initiatives, driving platform migrations, and enabling international product expansion. Strong background in scalable backend design, DevOps automation, and production system stability.",

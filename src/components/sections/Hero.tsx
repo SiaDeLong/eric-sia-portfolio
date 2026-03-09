@@ -16,7 +16,7 @@ interface HeroProps {
 }
 
 export default function Hero({ content }: HeroProps) {
-  const { name, title, tagline, ctaText, ctaLink } = content;
+  const { name, title, tagline, ctaText, ctaLink, location } = content;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -51,7 +51,7 @@ export default function Hero({ content }: HeroProps) {
             {/* Profile Image */}
             <motion.div 
               variants={itemVariants}
-              className="relative shrink-0"
+              className="relative flex flex-col items-center gap-4 shrink-0"
             >
               {/* Image container */}
               <div className="relative bg-dark-surface shadow-2xl border-2 border-purple-500/30 hover:border-purple-500/50 rounded-full w-48 md:w-64 h-48 md:h-64 overflow-hidden transition-colors duration-300">
@@ -65,6 +65,25 @@ export default function Hero({ content }: HeroProps) {
                 {/* Bottom gradient overlay with subtle effect */}
                 <div className="bottom-0 absolute inset-x-0 bg-linear-to-t from-black/80 to-transparent h-1/3" />
               </div>
+              
+              {/* Location Caption */}
+              <motion.div
+                className="bg-dark-surface/80 shadow-md backdrop-blur-sm px-4 py-2 border border-purple-500/30 rounded-full"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.3, duration: 0.5 }}
+              >
+                <div className="flex items-center gap-2">
+                  <span
+                    className="text-xl"
+                  >
+                    📍
+                  </span>
+                  <span className="font-medium text-purple-200 text-sm md:text-base whitespace-nowrap">
+                    {location}
+                  </span>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Text Content */}

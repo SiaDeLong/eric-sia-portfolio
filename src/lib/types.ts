@@ -6,6 +6,7 @@ export interface HeroContent {
   tagline: string;
   ctaText: string;
   ctaLink: string;
+  location: string;
 }
 
 export interface AboutContent {
