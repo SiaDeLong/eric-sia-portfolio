@@ -5,8 +5,6 @@ export const portfolioContent: PortfolioContent = {
     name: "Eric Sia",
     title: "Senior Full-Stack Engineer",
     tagline: "Building scalable end-to-end systems and beautiful web experiences with modern technologies",
-    ctaText: "Get in touch",
-    ctaLink: "#contact",
     location: "KL, Malaysia"
   },
   about: {
@@ -124,9 +122,9 @@ export const portfolioContent: PortfolioContent = {
         title: "Kiro Note 記録ノート - Todo App",
         description: "Productivity web app for task management with status tracking and responsive design for all devices.",
         technologies: ["Next.js", "State Management", "Local Storage", "Responsive UI"],
-        image: "/images/project4.jpg",
+        image: "/Kiro-Note.png",
         imageAlt: "Kiro Note todo app screenshot",
-        liveUrl: "",
+        liveUrl: "https://kiro-note.vercel.app/",
       }
     ]
   },

@@ -4,8 +4,6 @@ export interface HeroContent {
   name: string;
   title: string;
   tagline: string;
-  ctaText: string;
-  ctaLink: string;
   location: string;
 }
 

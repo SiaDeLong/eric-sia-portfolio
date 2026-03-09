@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
-import { portfolioContent } from '@/lib/content';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { portfolioContent } from "@/lib/content";
 
 export default function Projects() {
   const { projects } = portfolioContent.projects;
@@ -42,12 +42,12 @@ export default function Projects() {
               whileHover={{ y: -10 }}
               className="group relative"
               href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {/* Glow effect */}
               <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 via-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 blur-xl rounded-2xl transition duration-500" />
-              
+
               {/* Card */}
               <div className="relative flex flex-col bg-dark-surface shadow-2xl border border-purple-500/20 group-hover:border-purple-500/50 rounded-2xl h-full overflow-hidden transition-all duration-300">
                 {/* Image container */}
@@ -56,6 +56,8 @@ export default function Projects() {
                     src={project.image}
                     alt={project.imageAlt}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={95}
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   {/* Overlay gradient */}
