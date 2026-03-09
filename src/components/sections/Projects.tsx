@@ -33,7 +33,7 @@ export default function Projects() {
         {/* Projects grid */}
         <div className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -41,6 +41,9 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
               className="group relative"
+              href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
             >
               {/* Glow effect */}
               <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 via-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 blur-xl rounded-2xl transition duration-500" />
@@ -87,36 +90,30 @@ export default function Projects() {
                   {(project.liveUrl || project.sourceUrl) && (
                     <div className="flex gap-4 pt-4 border-purple-500/20 border-t">
                       {project.liveUrl && (
-                        <motion.a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className="flex items-center gap-2 bg-linear-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 px-4 py-2 rounded-lg font-semibold text-white text-sm transition-all duration-300"
                         >
                           <FaExternalLinkAlt className="w-4 h-4" />
                           Live Demo
-                        </motion.a>
+                        </motion.button>
                       )}
                       {project.sourceUrl && (
-                        <motion.a
-                          href={project.sourceUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className="flex items-center gap-2 hover:bg-purple-500/10 px-4 py-2 border border-purple-500/50 hover:border-purple-400 rounded-lg font-semibold text-purple-300 text-sm transition-all duration-300"
                         >
                           <FaGithub className="w-4 h-4" />
                           Source Code
-                        </motion.a>
+                        </motion.button>
                       )}
                     </div>
                   )}
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

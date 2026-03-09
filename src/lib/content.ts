@@ -4,7 +4,7 @@ export const portfolioContent: PortfolioContent = {
   hero: {
     name: "Eric Sia",
     title: "Senior Full-Stack Engineer",
-    tagline: "Crafting beautiful, performant web experiences with modern technologies",
+    tagline: "Building scalable end-to-end systems and beautiful web experiences with modern technologies",
     ctaText: "Get in touch",
     ctaLink: "#contact"
   },
