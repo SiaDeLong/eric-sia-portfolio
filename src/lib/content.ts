@@ -116,9 +116,9 @@ export const portfolioContent: PortfolioContent = {
         title: "Ameiro 雨いろ - Weather App",
         description: "Real-time weather monitoring app with worldwide data integration and clean location-based forecast visualization.",
         technologies: ["Next.js", "Weather API", "REST", "Secret Management"],
-        image: "/images/project3.jpg",
+        image: "/Ame-Iro.png",
         imageAlt: "Ameiro weather app screenshot",
-        liveUrl: "",
+        liveUrl: "https://ameiro-ruddy.vercel.app/",
       },
       {
         title: "Kiro Note 記録ノート - Todo App",
