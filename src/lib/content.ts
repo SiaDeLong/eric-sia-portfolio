@@ -1,19 +1,21 @@
-import type { PortfolioContent } from './types';
+import type { PortfolioContent } from "./types";
 
 export const portfolioContent: PortfolioContent = {
   hero: {
     name: "Eric Sia",
     title: "Senior Full-Stack Engineer",
-    tagline: "Building scalable end-to-end systems and beautiful web experiences with modern technologies",
-    location: "KL, Malaysia"
+    tagline:
+      "Building scalable end-to-end systems and beautiful web experiences with modern technologies",
+    location: "KL, Malaysia",
   },
   about: {
-    summary: "Deliver enterprise-grade systems using React, Spring Boot, and AWS. Specialized in system modernization, microservices architecture, and cloud-native deployments. Proven track record in leading technical initiatives, driving platform migrations, and enabling international product expansion. Strong background in scalable backend design, DevOps automation, and production system stability.",
+    summary:
+      "Deliver enterprise-grade systems using React, Spring Boot, and AWS. Specialized in system modernization, microservices architecture, and cloud-native deployments. Proven track record in leading technical initiatives, driving platform migrations, and enabling international product expansion. Strong background in scalable backend design, DevOps automation, and production system stability.",
     highlights: [
       { number: "4", label: "Years Coding" },
       { number: "30+", label: "Projects Built" },
       { number: "10+", label: "Technologies" },
-    ]
+    ],
   },
   skills: {
     skills: [
@@ -48,7 +50,7 @@ export const portfolioContent: PortfolioContent = {
       { name: "Expo Go", category: "Mobile" },
       { name: "Kotlin", category: "Mobile" },
       { name: "Android Studio", category: "Mobile" },
-    ]
+    ],
   },
   experience: {
     experiences: [
@@ -62,8 +64,8 @@ export const portfolioContent: PortfolioContent = {
           "Built CommissionSuite enabling first international expansion to Thailand",
           "Led migration from WebSphere Java EE to React + Spring Boot + PostgreSQL",
           "Introduced Docker and AWS infrastructure for improved deployment scalability",
-          "Delivered COO-led PoC securing customer approval and new business opportunities"
-        ]
+          "Delivered COO-led PoC securing customer approval and new business opportunities",
+        ],
       },
       {
         company: "Plaza Premium Group",
@@ -75,8 +77,8 @@ export const portfolioContent: PortfolioContent = {
           "Fixed critical production issue in Smart Traveller mobile app (React Native)",
           "Migrated Smart Traveller Admin Portal from Angular 5 to latest Angular LTS",
           "Built serverless AWS API integration portal for internal and client developers",
-          "Implemented Redis-based queue system on AWS EC2"
-        ]
+          "Implemented Redis-based queue system on AWS EC2",
+        ],
       },
       {
         company: "Matrixtudios",
@@ -87,16 +89,17 @@ export const portfolioContent: PortfolioContent = {
         achievements: [
           "Developed Next.js landing pages for marketing campaigns",
           "Implemented Zapier + Odoo automation for social media workflows",
-          "Assisted team development and mentored new interns"
-        ]
-      }
-    ]
+          "Assisted team development and mentored new interns",
+        ],
+      },
+    ],
   },
   projects: {
     projects: [
       {
         title: "新プル Group - Product Landing Platform",
-        description: "Official landing website with custom domain showcasing developed applications with SEO-optimized responsive design.",
+        description:
+          "Official landing website with custom domain showcasing developed applications with SEO-optimized responsive design.",
         technologies: ["Next.js", "Custom Domain", "SEO", "Responsive Design"],
         image: "/Simple-Group.png",
         imageAlt: "新プル Group landing platform screenshot",
@@ -104,15 +107,31 @@ export const portfolioContent: PortfolioContent = {
       },
       {
         title: "新プル Booth - iOS POS System",
-        description: "Mobile POS system for event booth businesses with product management, order tracking, and premium subscription features.",
+        description:
+          "Mobile POS system for event booth businesses with product management, order tracking, and premium subscription features.",
         technologies: ["React Native", "Expo Go", "iOS", "In-App Purchase"],
         image: "/images/project2.jpg",
         imageAlt: "新プル Booth POS system screenshot",
         liveUrl: "",
       },
       {
+        title: "Yvette Cosplay Showcase",
+        description:
+          "Custom-built cosplay portfolio designed based on Yvette's requirements, featuring animated character showcases, smooth transitions, and an immersive anime-inspired UI.",
+        technologies: [
+          "Next.js",
+          "Framer Motion",
+          "Interactive Character Selector",
+          "Responsive Anime UI",
+        ],
+        image: "/Yvette-Cosplay.jpg",
+        imageAlt: "Yvette cosplay interactive portfolio screenshot",
+        liveUrl: "https://yvette-chi.vercel.app/",
+      },
+      {
         title: "Ameiro 雨いろ - Weather App",
-        description: "Real-time weather monitoring app with worldwide data integration and clean location-based forecast visualization.",
+        description:
+          "Real-time weather monitoring app with worldwide data integration and clean location-based forecast visualization.",
         technologies: ["Next.js", "Weather API", "REST", "Secret Management"],
         image: "/Ame-Iro.png",
         imageAlt: "Ameiro weather app screenshot",
@@ -120,22 +139,40 @@ export const portfolioContent: PortfolioContent = {
       },
       {
         title: "Kiro Note 記録ノート - Todo App",
-        description: "Productivity web app for task management with status tracking and responsive design for all devices.",
-        technologies: ["Next.js", "State Management", "Local Storage", "Responsive UI"],
+        description:
+          "Productivity web app for task management with status tracking and responsive design for all devices.",
+        technologies: [
+          "Next.js",
+          "State Management",
+          "Local Storage",
+          "Responsive UI",
+        ],
         image: "/Kiro-Note.png",
         imageAlt: "Kiro Note todo app screenshot",
         liveUrl: "https://kiro-note.vercel.app/",
-      }
-    ]
+      },
+    ],
   },
   contact: {
     heading: "Let's work together",
     subheading: "I'm currently open to new opportunities and exciting projects",
     socialLinks: [
-      { platform: "LinkedIn", url: "https://www.linkedin.com/in/eric-sia-b0385a284/", icon: "linkedin" },
-      { platform: "GitHub", url: "https://github.com/SiaDeLong", icon: "github" },
-      { platform: "Email", url: "mailto:ericsiadelong@outlook.com", icon: "email" }
-    ]
+      {
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/in/eric-sia-b0385a284/",
+        icon: "linkedin",
+      },
+      {
+        platform: "GitHub",
+        url: "https://github.com/SiaDeLong",
+        icon: "github",
+      },
+      {
+        platform: "Email",
+        url: "mailto:ericsiadelong@outlook.com",
+        icon: "email",
+      },
+    ],
   },
   navigation: {
     items: [
@@ -143,7 +180,7 @@ export const portfolioContent: PortfolioContent = {
       { label: "Skills", href: "#skills" },
       { label: "Experience", href: "#experience" },
       { label: "Projects", href: "#projects" },
-      { label: "Contact", href: "#contact" }
-    ]
-  }
+      { label: "Contact", href: "#contact" },
+    ],
+  },
 };

@@ -165,7 +165,7 @@ export default function Contact({ content }: ContactProps) {
             transition={{ duration: 0.6, delay: 1 }}
             className="mt-16 text-dark-text-muted text-sm"
           >
-            © 2024 All rights reserved
+            © 2026 Eric Sia
           </motion.p>
         </motion.div>
       </div>
