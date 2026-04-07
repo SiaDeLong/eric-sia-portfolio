@@ -181,7 +181,7 @@ export const portfolioContent: PortfolioContent = {
         description:
           "Mobile POS system for event booth businesses with product management, order tracking, and premium subscription features.",
         technologies: ["React Native", "Expo Go", "iOS", "In-App Purchase"],
-        image: "/Simple-Booth.png",
+        image: "/Simple-Booth.PNG",
         imageAlt: "新プル Booth POS system screenshot",
         liveUrl: "https://apps.apple.com/app/shinpuru-booth/id6761042153",
       },
