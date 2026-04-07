@@ -34,7 +34,9 @@ export interface Experience {
   duration: string;
   startDate: string;
   endDate: string;
+  location?: string;
   achievements: string[];
+  keyAchievements?: string[];
 }
 
 export interface ExperienceContent {
