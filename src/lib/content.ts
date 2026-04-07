@@ -7,8 +7,24 @@ export const portfolioContent: PortfolioContent = {
     tagline:
       "Building scalable end-to-end systems and beautiful web experiences with modern technologies",
     location: "KL, Malaysia",
+    resumePath: "/Eric_Sia-Senior_Full_Stack_Engineer.pdf",
+    ctaPrimary: "Get in touch",
+    ctaSecondary: "View Projects",
+    codeCard: {
+      filename: "eric.config.ts",
+      comment: "// available for hire",
+      fields: [
+        { key: "name", value: "Eric Sia" },
+        { key: "role", value: "Full Stack" },
+        { key: "exp", value: 4 },
+        { key: "open", value: true },
+      ],
+    },
   },
+
   about: {
+    sectionLabel: "01 — About",
+    heading: "About Me",
     summary:
       "Senior Full Stack Engineer with 4 years of experience building scalable enterprise systems using React, Spring Boot, and AWS. Experienced in microservices architecture, cloud-native deployment, and system modernization. Proven track record in delivering production systems, driving technical initiatives, and supporting international product expansion.",
     highlights: [
@@ -16,8 +32,46 @@ export const portfolioContent: PortfolioContent = {
       { number: "30+", label: "Projects Built" },
       { number: "10+", label: "Technologies" },
     ],
+    strengths: [
+      "Problem Solver",
+      "Team Player",
+      "Fast Learner",
+      "Detail-Oriented",
+    ],
+    terminal: {
+      filename: "profile.json",
+      comment: "// Senior Full Stack Engineer",
+      fields: [
+        { key: "stack", value: ["React", "Spring Boot", "AWS", "Docker"] },
+        { key: "experience", value: 4 },
+        { key: "location", value: "KL, Malaysia" },
+        { key: "focus", value: "Enterprise Systems" },
+        { key: "openToWork", value: true },
+      ],
+    },
   },
+
   skills: {
+    sectionLabel: "02 — Skills",
+    heading: "Skills & Technologies",
+    subheading: "Full-stack expertise across modern development",
+    marqueeItems: [
+      "React",
+      "Next.js",
+      "Spring Boot",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "PostgreSQL",
+      "Redis",
+      "TypeScript",
+      "Java",
+      "Node.js",
+      "Angular",
+      "Vue",
+      "React Native",
+      "CI/CD",
+    ],
     skills: [
       { name: "React", category: "Frontend" },
       { name: "Next.js", category: "Frontend" },
@@ -45,7 +99,11 @@ export const portfolioContent: PortfolioContent = {
       { name: "Kotlin", category: "Mobile" },
     ],
   },
+
   experience: {
+    sectionLabel: "03 — Experience",
+    heading: "My Experience",
+    subheading: "professional journey and key achievements",
     experiences: [
       {
         company: "OpenMove AI Bhd",
@@ -102,7 +160,12 @@ export const portfolioContent: PortfolioContent = {
       },
     ],
   },
+
   projects: {
+    sectionLabel: "04 — Projects",
+    heading: "Featured Projects",
+    subheading:
+      "A showcase of my recent work in frontend development and design",
     projects: [
       {
         title: "新プル Group - Product Landing Platform",
@@ -161,9 +224,14 @@ export const portfolioContent: PortfolioContent = {
       },
     ],
   },
+
   contact: {
+    sectionLabel: "05 — Contact",
     heading: "Let's work together",
     subheading: "I'm currently open to new opportunities and exciting projects",
+    ctaText:
+      "Ready to bring your ideas to life? Let's create something amazing together.",
+    ctaEmail: "mailto:ericsiadelong@outlook.com",
     socialLinks: [
       {
         platform: "LinkedIn",
@@ -186,7 +254,13 @@ export const portfolioContent: PortfolioContent = {
         icon: "resume",
       },
     ],
+    footer: {
+      logoMark: "Eric Sia",
+      builtWith: "Built with Next.js · Framer Motion · Tailwind CSS",
+      copyright: "© 2026 Eric Sia. All rights reserved.",
+    },
   },
+
   navigation: {
     items: [
       { label: "About", href: "#about" },

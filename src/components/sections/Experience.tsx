@@ -6,6 +6,9 @@ import type { Experience } from "@/lib/types";
 
 interface ExperienceProps {
   experiences: Experience[];
+  sectionLabel: string;
+  heading: string;
+  subheading: string;
 }
 
 function TimelineItem({
@@ -182,7 +185,12 @@ function TimelineItem({
   );
 }
 
-export default function ExperienceSection({ experiences }: ExperienceProps) {
+export default function ExperienceSection({
+  experiences,
+  sectionLabel,
+  heading,
+  subheading,
+}: ExperienceProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -218,11 +226,12 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
         >
+          <div className="justify-center section-label">{sectionLabel}</div>
           <h2 className="mb-4 font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-tight">
-            Experience
+            {heading}
           </h2>
           <p className="text-dark-text-secondary text-lg md:text-xl">
-            My professional journey and key achievements
+            {subheading}
           </p>
         </motion.div>
 

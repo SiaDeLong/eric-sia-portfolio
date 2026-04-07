@@ -20,7 +20,15 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function Contact({ content }: ContactProps) {
-  const { heading, subheading, socialLinks } = content;
+  const {
+    sectionLabel,
+    heading,
+    subheading,
+    ctaText,
+    ctaEmail,
+    socialLinks,
+    footer,
+  } = content;
 
   return (
     <section
@@ -65,15 +73,18 @@ export default function Contact({ content }: ContactProps) {
           className="text-center"
         >
           {/* Main heading */}
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="bg-clip-text bg-linear-to-r from-white via-purple-400 to-white mb-6 font-bold text-transparent text-5xl md:text-6xl lg:text-8xl leading-tight"
           >
-            {heading}
-          </motion.h2>
+            <div className="justify-center mb-4 section-label">
+              {sectionLabel}
+            </div>
+            <h2>{heading}</h2>
+          </motion.div>
 
           {/* Subheading */}
           <motion.p
@@ -99,13 +110,11 @@ export default function Contact({ content }: ContactProps) {
 
             <div className="relative bg-dark-surface/80 backdrop-blur-sm p-8 md:p-12 border border-purple-500/30 rounded-3xl">
               <p className="mb-8 font-light text-white text-2xl md:text-3xl">
-                Ready to bring your ideas to life? Let&apos;s create something
-                amazing together.
+                {ctaText}
               </p>
 
-              {/* Email CTA Button */}
               <motion.a
-                href="mailto:ericsiadelong@outlook.com"
+                href={ctaEmail}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 bg-linear-to-r from-purple-600 to-blue-600 shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 px-10 py-5 rounded-full font-semibold text-white text-lg transition-all duration-300"
@@ -163,16 +172,30 @@ export default function Contact({ content }: ContactProps) {
             </div>
           </motion.div>
 
-          {/* Footer note */}
-          <motion.p
+          {/* Footer */}
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="mt-16 text-dark-text-muted text-sm"
+            className="mt-20 pt-8 border-purple-500/10 border-t"
           >
-            © 2026 Eric Sia
-          </motion.p>
+            <div className="flex sm:flex-row flex-col justify-between items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-purple-500 text-xs">{"<"}</span>
+                <span className="font-semibold text-white text-sm">
+                  {footer.logoMark}
+                </span>
+                <span className="font-mono text-purple-500 text-xs">
+                  {"/>"}
+                </span>
+              </div>
+              <p className="font-mono text-dark-text-muted text-xs">
+                {footer.builtWith}
+              </p>
+              <p className="text-dark-text-muted text-xs">{footer.copyright}</p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

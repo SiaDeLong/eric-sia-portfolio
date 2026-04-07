@@ -1,20 +1,41 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { AboutContent } from '@/lib/types';
+import { motion } from "framer-motion";
+import type { AboutContent } from "@/lib/types";
 
 interface AboutProps {
   content: AboutContent;
 }
 
+function renderTerminalValue(value: string | number | boolean | string[]) {
+  if (Array.isArray(value)) {
+    return (
+      <>
+        [
+        {value.map((v, i) => (
+          <span key={v}>
+            <span className="t-str">&quot;{v}&quot;</span>
+            {i < value.length - 1 ? ", " : ""}
+          </span>
+        ))}
+        ]
+      </>
+    );
+  }
+  if (typeof value === "string")
+    return <span className="t-str">&quot;{value}&quot;</span>;
+  if (typeof value === "number") return <span className="t-num">{value}</span>;
+  return <span className="t-bool">{String(value)}</span>;
+}
+
 export default function About({ content }: AboutProps) {
-  const { summary, highlights } = content;
+  const { sectionLabel, heading, summary, highlights, strengths, terminal } =
+    content;
 
   return (
     <section id="about" className="relative px-6 py-32 overflow-hidden">
-      {/* Background elements */}
       <div className="absolute inset-0 bg-linear-to-b from-purple-500/5 via-transparent to-transparent pointer-events-none" />
-      
+
       <div className="relative mx-auto max-w-6xl">
         {/* Section heading */}
         <motion.div
@@ -24,37 +45,85 @@ export default function About({ content }: AboutProps) {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
+          <div className="justify-center section-label">{sectionLabel}</div>
           <h2 className="mb-6 font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-tight">
-            About Me
+            {heading}
           </h2>
         </motion.div>
 
-        {/* Main content */}
-        <div className="gap-12 grid grid-cols-1 lg:grid-cols-3 mb-16">
-          {/* Key highlights */}
-          {highlights.map((item, index) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative"
-            >
-              <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-lg transition duration-500 blur" />
-              <div className="relative bg-dark-surface p-8 border border-dark-border hover:border-purple-500/50 rounded-lg text-center transition-all duration-300">
-                <div className="bg-clip-text bg-linear-to-r from-purple-400 to-blue-400 mb-3 font-bold text-transparent text-5xl md:text-6xl">
-                  {item.number}
-                </div>
-                <div className="font-medium text-dark-text-secondary text-sm md:text-base uppercase tracking-wider">
-                  {item.label}
-                </div>
+        {/* Terminal + highlights */}
+        <div className="gap-8 grid grid-cols-1 lg:grid-cols-5 mb-16">
+          {/* Terminal block */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-2"
+          >
+            <div className="terminal-block h-full">
+              <div className="terminal-bar">
+                <span />
+                <span />
+                <span />
+                <span className="ml-2 font-mono text-[10px] text-dark-text-muted">
+                  {terminal.filename}
+                </span>
               </div>
-            </motion.div>
-          ))}
+              <div className="terminal-content">
+                <div>
+                  <span className="t-comment">{terminal.comment}</span>
+                </div>
+                <div>{"{"}</div>
+                {terminal.fields.map((f) => (
+                  <div key={f.key}>
+                    &nbsp;&nbsp;
+                    <span className="t-key">&quot;{f.key}&quot;</span>:{" "}
+                    {renderTerminalValue(f.value)},
+                  </div>
+                ))}
+                <div>{"}"}</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Highlights */}
+          <div className="flex flex-col gap-6 lg:col-span-3">
+            {highlights.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="group relative"
+              >
+                <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-lg transition duration-500 blur" />
+                <div className="relative flex items-center gap-6 bg-dark-surface p-6 border border-dark-border hover:border-purple-500/50 rounded-lg transition-all duration-300">
+                  <div className="bg-clip-text bg-linear-to-r from-purple-400 to-blue-400 font-bold tabular-nums text-transparent text-5xl md:text-6xl shrink-0">
+                    {item.number}
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-white text-lg">
+                      {item.label}
+                    </div>
+                    <div className="bg-purple-500/20 mt-2 rounded-full w-full h-1 overflow-hidden">
+                      <motion.div
+                        className="bg-linear-to-r from-purple-500 to-blue-500 rounded-full h-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* Summary - concise and powerful */}
+        {/* Summary */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +139,7 @@ export default function About({ content }: AboutProps) {
           </div>
         </motion.div>
 
-        {/* Core strengths */}
+        {/* Strengths */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +147,7 @@ export default function About({ content }: AboutProps) {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-wrap justify-center gap-4 mt-16"
         >
-          {['Problem Solver', 'Team Player', 'Fast Learner', 'Detail-Oriented'].map((strength, index) => (
+          {strengths.map((strength, index) => (
             <motion.span
               key={strength}
               initial={{ opacity: 0, scale: 0.8 }}

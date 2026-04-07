@@ -5,11 +5,27 @@ export interface HeroContent {
   title: string;
   tagline: string;
   location: string;
+  resumePath: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  codeCard: {
+    filename: string;
+    fields: Array<{ key: string; value: string | number | boolean }>;
+    comment: string;
+  };
 }
 
 export interface AboutContent {
+  sectionLabel: string;
+  heading: string;
   summary: string;
   highlights: Array<{ number: string; label: string }>;
+  strengths: string[];
+  terminal: {
+    filename: string;
+    comment: string;
+    fields: Array<{ key: string; value: string | number | boolean | string[] }>;
+  };
 }
 
 export interface Skill {
@@ -25,6 +41,10 @@ export interface Skill {
 }
 
 export interface SkillsContent {
+  sectionLabel: string;
+  heading: string;
+  subheading: string;
+  marqueeItems: string[];
   skills: Skill[];
 }
 
@@ -40,6 +60,9 @@ export interface Experience {
 }
 
 export interface ExperienceContent {
+  sectionLabel: string;
+  heading: string;
+  subheading: string;
   experiences: Experience[];
 }
 
@@ -54,6 +77,9 @@ export interface Project {
 }
 
 export interface ProjectsContent {
+  sectionLabel: string;
+  heading: string;
+  subheading: string;
   projects: Project[];
 }
 
@@ -64,9 +90,17 @@ export interface SocialLink {
 }
 
 export interface ContactContent {
+  sectionLabel: string;
   heading: string;
   subheading: string;
+  ctaText: string;
+  ctaEmail: string;
   socialLinks: SocialLink[];
+  footer: {
+    logoMark: string;
+    builtWith: string;
+    copyright: string;
+  };
 }
 
 export interface NavItem {
