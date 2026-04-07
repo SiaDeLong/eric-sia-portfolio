@@ -14,7 +14,13 @@ export interface AboutContent {
 
 export interface Skill {
   name: string;
-  category: 'Frontend' | 'Backend' | 'Database' | 'Cloud & DevOps' | 'Programming' | 'Mobile';
+  category:
+    | "Frontend"
+    | "Backend"
+    | "Database"
+    | "Cloud & DevOps"
+    | "Programming"
+    | "Mobile";
   icon?: string;
 }
 
@@ -50,7 +56,7 @@ export interface ProjectsContent {
 }
 
 export interface SocialLink {
-  platform: 'LinkedIn' | 'GitHub' | 'Email' | 'Twitter';
+  platform: "LinkedIn" | "GitHub" | "Email" | "Twitter" | "Resume";
   url: string;
   icon: string;
 }

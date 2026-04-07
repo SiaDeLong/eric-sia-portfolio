@@ -110,9 +110,9 @@ export const portfolioContent: PortfolioContent = {
         description:
           "Mobile POS system for event booth businesses with product management, order tracking, and premium subscription features.",
         technologies: ["React Native", "Expo Go", "iOS", "In-App Purchase"],
-        image: "/images/project2.jpg",
+        image: "/Simple-Booth.png",
         imageAlt: "新プル Booth POS system screenshot",
-        liveUrl: "",
+        liveUrl: "https://apps.apple.com/app/shinpuru-booth/id6761042153",
       },
       {
         title: "Yvette Cosplay Showcase",
@@ -171,6 +171,11 @@ export const portfolioContent: PortfolioContent = {
         platform: "Email",
         url: "mailto:ericsiadelong@outlook.com",
         icon: "email",
+      },
+      {
+        platform: "Resume",
+        url: "/Eric_Sia-Senior_Full_Stack_Engineer.pdf",
+        icon: "resume",
       },
     ],
   },
