@@ -1,22 +1,35 @@
-'use client';
+"use client";
 
-import { useMemo, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import type { Experience } from '@/lib/types';
+import { useMemo, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import type { Experience } from "@/lib/types";
 
 interface ExperienceProps {
   experiences: Experience[];
+  sectionLabel: string;
+  heading: string;
+  subheading: string;
 }
 
-function TimelineItem({ experience, index }: { experience: Experience; index: number }) {
+function TimelineItem({
+  experience,
+  index,
+}: {
+  experience: Experience;
+  index: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center center"]
+    offset: ["start end", "center center"],
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const x = useTransform(scrollYProgress, [0, 0.5], [index % 2 === 0 ? -50 : 50, 0]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    [index % 2 === 0 ? -50 : 50, 0],
+  );
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
   const isLeft = index % 2 === 0;
@@ -38,7 +51,7 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
         >
           {/* Glowing dot */}
           <div className="z-10 relative bg-purple-500 shadow-lg shadow-purple-500/50 border-4 border-dark-bg rounded-full w-6 h-6" />
-          
+
           {/* Pulse effect */}
           <motion.div
             className="absolute inset-0 bg-purple-500 rounded-full"
@@ -49,7 +62,7 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
             transition={{
               duration: 2,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
           />
         </motion.div>
@@ -58,12 +71,12 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
       {/* Content */}
       <motion.div
         style={{ x: isLeft ? x : 0 }}
-        className={`${isLeft ? 'md:text-right md:pr-8' : 'md:col-start-2 md:pl-8'}`}
+        className={`${isLeft ? "md:text-right md:pr-8" : "md:col-start-2 md:pl-8"}`}
       >
         <div className="group relative">
           {/* Card background with gradient border effect */}
           <div className="absolute -inset-0.5 bg-linear-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 rounded-lg transition duration-500 blur" />
-          
+
           <div className="relative bg-dark-surface backdrop-blur-sm p-6 md:p-8 border border-dark-border hover:border-purple-500/50 rounded-lg transition-all duration-300">
             {/* Date badge */}
             <motion.div
@@ -73,7 +86,18 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
               transition={{ delay: 0.3 }}
               className="inline-block bg-purple-500/10 mb-4 px-4 py-1.5 border border-purple-500/30 rounded-full font-medium text-purple-300 text-sm"
             >
-              {new Date(experience.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - {experience.endDate === 'Present' ? 'Present' : new Date(experience.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} • {experience.duration}
+              {new Date(experience.startDate).toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+              })}{" "}
+              -{" "}
+              {experience.endDate === "Present"
+                ? "Present"
+                : new Date(experience.endDate).toLocaleDateString("en-US", {
+                    month: "short",
+                    year: "numeric",
+                  })}{" "}
+              • {experience.duration}
             </motion.div>
 
             {/* Company and role */}
@@ -95,6 +119,7 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
               className="mb-6 font-medium text-purple-400 text-lg"
             >
               {experience.company}
+              {experience.location ? ` · ${experience.location}` : ""}
             </motion.p>
 
             {/* Achievements - always left aligned */}
@@ -119,6 +144,37 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
                 </motion.li>
               ))}
             </motion.ul>
+
+            {/* Key Achievements */}
+            {experience.keyAchievements &&
+              experience.keyAchievements.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.8 }}
+                  className="mt-6 text-left"
+                >
+                  <p className="mb-3 font-semibold text-purple-300 text-sm uppercase tracking-wider">
+                    Key Achievements
+                  </p>
+                  <ul className="space-y-3">
+                    {experience.keyAchievements.map((item, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.9 + idx * 0.1 }}
+                        className="flex items-start gap-3 text-dark-text-secondary"
+                      >
+                        <span className="mt-1 text-yellow-400 shrink-0">★</span>
+                        <span>{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
           </div>
         </div>
       </motion.div>
@@ -129,11 +185,16 @@ function TimelineItem({ experience, index }: { experience: Experience; index: nu
   );
 }
 
-export default function ExperienceSection({ experiences }: ExperienceProps) {
+export default function ExperienceSection({
+  experiences,
+  sectionLabel,
+  heading,
+  subheading,
+}: ExperienceProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   // Sort experiences by date in reverse chronological order
@@ -148,7 +209,11 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={sectionRef} id="experience" className="relative px-6 py-20 overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="experience"
+      className="relative px-6 py-20 overflow-hidden"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-purple-500/5 to-transparent pointer-events-none" />
 
@@ -157,15 +222,16 @@ export default function ExperienceSection({ experiences }: ExperienceProps) {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
         >
+          <div className="justify-center section-label">{sectionLabel}</div>
           <h2 className="mb-4 font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-tight">
-            Experience
+            {heading}
           </h2>
           <p className="text-dark-text-secondary text-lg md:text-xl">
-            My professional journey and key achievements
+            {subheading}
           </p>
         </motion.div>
 

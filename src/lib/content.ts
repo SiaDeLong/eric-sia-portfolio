@@ -7,8 +7,24 @@ export const portfolioContent: PortfolioContent = {
     tagline:
       "Building scalable end-to-end systems and beautiful web experiences with modern technologies",
     location: "KL, Malaysia",
+    resumePath: "/Eric_Sia-Senior_Full_Stack_Engineer.pdf",
+    ctaPrimary: "Get in touch",
+    ctaSecondary: "View Projects",
+    codeCard: {
+      filename: "eric.config.ts",
+      comment: "// available for hire",
+      fields: [
+        { key: "name", value: "Eric Sia" },
+        { key: "role", value: "Full Stack" },
+        { key: "exp", value: 4 },
+        { key: "open", value: true },
+      ],
+    },
   },
+
   about: {
+    sectionLabel: "01 — About",
+    heading: "About Me",
     summary:
       "Senior Full Stack Engineer (4 years) specializing in scalable enterprise systems using React, Spring Boot, and AWS. Built and supported production platforms serving 100K+ daily requests and multi-country business operations. Experienced in microservices and event-driven architectures, driving improvements in deployment efficiency, system reliability, and production scalability across enterprise workloads and high-traffic systems.",
     highlights: [
@@ -16,8 +32,46 @@ export const portfolioContent: PortfolioContent = {
       { number: "100K+", label: "Daily Requests" },
       { number: "Multi-Country", label: "Operations" },
     ],
+    strengths: [
+      "Problem Solver",
+      "Team Player",
+      "Fast Learner",
+      "Detail-Oriented",
+    ],
+    terminal: {
+      filename: "profile.json",
+      comment: "// Senior Full Stack Engineer",
+      fields: [
+        { key: "stack", value: ["React", "Spring Boot", "AWS", "Docker"] },
+        { key: "experience", value: 4 },
+        { key: "location", value: "KL, Malaysia" },
+        { key: "focus", value: "Enterprise Systems" },
+        { key: "openToWork", value: true },
+      ],
+    },
   },
+
   skills: {
+    sectionLabel: "02 — Skills",
+    heading: "Skills & Technologies",
+    subheading: "Full-stack expertise across modern development",
+    marqueeItems: [
+      "React",
+      "Next.js",
+      "Spring Boot",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "PostgreSQL",
+      "Redis",
+      "TypeScript",
+      "Java",
+      "Node.js",
+      "Angular",
+      "Vue",
+      "React Native",
+      "CI/CD",
+    ],
     skills: [
       { name: "React", category: "Frontend" },
       { name: "Next.js", category: "Frontend" },
@@ -33,10 +87,10 @@ export const portfolioContent: PortfolioContent = {
       { name: "MSSQL", category: "Database" },
       { name: "DB2", category: "Database" },
       { name: "Redis", category: "Database" },
-      { name: "AWS", category: "Cloud & DevOps" },
+      { name: "DB2", category: "Database" },
+      { name: "AWS (ECS, EKS, Lambda)", category: "Cloud & DevOps" },
       { name: "Docker", category: "Cloud & DevOps" },
       { name: "Kubernetes", category: "Cloud & DevOps" },
-      { name: "CI/CD", category: "Cloud & DevOps" },
       { name: "Jenkins", category: "Cloud & DevOps" },
       { name: "GitHub Actions", category: "Cloud & DevOps" },
       { name: "Angular", category: "Other" },
@@ -46,7 +100,11 @@ export const portfolioContent: PortfolioContent = {
       { name: "C# .NET", category: "Other" },
     ],
   },
+
   experience: {
+    sectionLabel: "03 — Experience",
+    heading: "My Experience",
+    subheading: "professional journey and key achievements",
     experiences: [
       {
         company: "OpenMove AI Bhd",
@@ -95,7 +153,12 @@ export const portfolioContent: PortfolioContent = {
       },
     ],
   },
+
   projects: {
+    sectionLabel: "04 — Projects",
+    heading: "Featured Projects",
+    subheading:
+      "A showcase of my recent work in frontend development and design",
     projects: [
       {
         title: "新プル Group - Product Landing Platform",
@@ -111,9 +174,9 @@ export const portfolioContent: PortfolioContent = {
         description:
           "Mobile POS system for event booth businesses with product management, order tracking, and premium subscription features.",
         technologies: ["React Native", "Expo Go", "iOS", "In-App Purchase"],
-        image: "/images/project2.jpg",
+        image: "/Simple-Booth.PNG",
         imageAlt: "新プル Booth POS system screenshot",
-        liveUrl: "",
+        liveUrl: "https://apps.apple.com/app/shinpuru-booth/id6761042153",
       },
       {
         title: "Yvette Cosplay Showcase",
@@ -154,9 +217,14 @@ export const portfolioContent: PortfolioContent = {
       },
     ],
   },
+
   contact: {
+    sectionLabel: "05 — Contact",
     heading: "Let's work together",
     subheading: "I'm currently open to new opportunities and exciting projects",
+    ctaText:
+      "Ready to bring your ideas to life? Let's create something amazing together.",
+    ctaEmail: "mailto:ericsiadelong@outlook.com",
     socialLinks: [
       {
         platform: "LinkedIn",
@@ -173,8 +241,19 @@ export const portfolioContent: PortfolioContent = {
         url: "mailto:ericsiadelong@outlook.com",
         icon: "email",
       },
+      {
+        platform: "Resume",
+        url: "/Eric_Sia-Senior_Full_Stack_Engineer.pdf",
+        icon: "resume",
+      },
     ],
+    footer: {
+      logoMark: "Eric Sia",
+      builtWith: "Built with Next.js · Framer Motion · Tailwind CSS",
+      copyright: "© 2026 Eric Sia. All rights reserved.",
+    },
   },
+
   navigation: {
     items: [
       { label: "About", href: "#about" },

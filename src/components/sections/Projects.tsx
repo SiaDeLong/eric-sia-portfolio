@@ -3,10 +3,14 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { portfolioContent } from "@/lib/content";
+import type { ProjectsContent } from "@/lib/types";
 
-export default function Projects() {
-  const { projects } = portfolioContent.projects;
+interface ProjectsProps {
+  content: ProjectsContent;
+}
+
+export default function Projects({ content }: ProjectsProps) {
+  const { sectionLabel, heading, subheading, projects } = content;
 
   return (
     <section id="projects" className="relative px-6 py-32 overflow-hidden">
@@ -22,11 +26,12 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
         >
+          <div className="justify-center section-label">{sectionLabel}</div>
           <h2 className="mb-6 font-bold text-white text-5xl md:text-6xl lg:text-7xl leading-tight">
-            Featured Projects
+            {heading}
           </h2>
           <p className="text-dark-text-secondary text-lg md:text-xl">
-            A showcase of my recent work in frontend development and design
+            {subheading}
           </p>
         </motion.div>
 
