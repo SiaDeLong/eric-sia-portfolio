@@ -50,6 +50,10 @@ export default function Skills({ skills }: SkillsProps) {
       icon: <FaMobile className="text-2xl" />, 
       color: 'from-indigo-500 to-purple-500'
     },
+    'Other': { 
+      icon: <FaCode className="text-2xl" />, 
+      color: 'from-slate-500 to-gray-500'
+    },
   };
 
   const categories = Object.keys(groupedSkills);

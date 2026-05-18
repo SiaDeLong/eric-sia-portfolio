@@ -81,7 +81,7 @@ export default function Hero({ content }: HeroProps) {
                   </div>
                 </div>
                 <motion.a
-                  href="/Eric_Sia-Senior_Full_Stack_Engineer.pdf"
+                  href="/Sia_De_Long-Senior_Full_Stack_Engineer.pdf"
                   download
                   className="inline-flex items-center gap-1.5 text-dark-text-secondary hover:text-purple-300 text-sm transition-colors duration-200"
                   whileHover={{ y: -1 }}
