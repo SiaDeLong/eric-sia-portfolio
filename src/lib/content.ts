@@ -87,7 +87,6 @@ export const portfolioContent: PortfolioContent = {
       { name: "MSSQL", category: "Database" },
       { name: "DB2", category: "Database" },
       { name: "Redis", category: "Database" },
-      { name: "DB2", category: "Database" },
       { name: "AWS (ECS, EKS, Lambda)", category: "Cloud & DevOps" },
       { name: "Docker", category: "Cloud & DevOps" },
       { name: "Kubernetes", category: "Cloud & DevOps" },

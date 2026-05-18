@@ -35,8 +35,7 @@ export interface Skill {
     | "Backend"
     | "Database"
     | "Cloud & DevOps"
-    | "Programming"
-    | "Mobile";
+    | "Other";
   icon?: string;
 }
 
